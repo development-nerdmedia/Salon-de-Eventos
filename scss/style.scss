@@ -138,6 +138,27 @@ section.home{
 }
 
 
+h2{
+    font-family: var(--fuente-Noto);
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: var(--color-anaranjado);
+    margin-bottom: 60px;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 122.47px;
+        height: 19.29px;
+        background-image: url(../img/figura.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 section.bajada{
     padding: 300px 0;
     position: relative;
@@ -153,27 +174,6 @@ section.bajada{
         top: 0;
         left: 0;
         background: rgba(24, 19, 18, 0.8);
-    }
-    h2{
-        font-family: var(--fuente-Noto);
-        font-weight: 700;
-        font-size: 40px;
-        text-align: center;
-        color: var(--color-anaranjado);
-        margin-bottom: 60px;
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            width: 122.47px;
-            height: 19.29px;
-            background-image: url(../img/figura.svg);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     }
     p{
         font-family: var(--fuente-Work);
@@ -327,6 +327,38 @@ section.serviciosHome{
                     background-color: transparent;
                     border: 2px solid #fff;
                     z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+
+section.servicios{
+    .container{
+        max-width: 1297px;
+    }
+    .contentServicios{
+        margin-top: 100px;
+        .itemServicios{
+            display: flex;
+            .textoInfo{
+                padding: 55px;
+                background: linear-gradient(180deg, #201A19 0%, #181312 100%);
+                h3{
+                    font-family: var(--fuente-Noto);
+                    font-style: italic;
+                    font-weight: 700;
+                    font-size: 30px;
+                    color: var(--color-anaranjado);
+                }
+                p{
+                    font-family: var(--fuente-Work);
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 137.52%;
+                    color: #fff;
                 }
             }
         }

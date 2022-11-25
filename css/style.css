@@ -113,6 +113,26 @@ section.home {
         animation-name: TimeLine;
         animation-iteration-count: infinite; }
 
+h2 {
+  font-family: var(--fuente-Noto);
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  color: var(--color-anaranjado);
+  margin-bottom: 60px;
+  position: relative; }
+  h2::after {
+    position: absolute;
+    content: '';
+    width: 122.47px;
+    height: 19.29px;
+    background-image: url(../img/figura.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%); }
+
 section.bajada {
   padding: 300px 0;
   position: relative; }
@@ -127,25 +147,6 @@ section.bajada {
     top: 0;
     left: 0;
     background: rgba(24, 19, 18, 0.8); }
-  section.bajada h2 {
-    font-family: var(--fuente-Noto);
-    font-weight: 700;
-    font-size: 40px;
-    text-align: center;
-    color: var(--color-anaranjado);
-    margin-bottom: 60px;
-    position: relative; }
-    section.bajada h2::after {
-      position: absolute;
-      content: '';
-      width: 122.47px;
-      height: 19.29px;
-      background-image: url(../img/figura.svg);
-      background-size: 100%;
-      background-repeat: no-repeat;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%); }
   section.bajada p {
     font-family: var(--fuente-Work);
     font-weight: 400;
@@ -271,3 +272,27 @@ section.serviciosHome {
           background-color: transparent;
           border: 2px solid #fff;
           z-index: -1; }
+
+section.servicios .container {
+  max-width: 1297px; }
+
+section.servicios .contentServicios {
+  margin-top: 100px; }
+  section.servicios .contentServicios .itemServicios {
+    display: flex; }
+    section.servicios .contentServicios .itemServicios .textoInfo {
+      padding: 55px;
+      background: linear-gradient(180deg, #201A19 0%, #181312 100%); }
+      section.servicios .contentServicios .itemServicios .textoInfo h3 {
+        font-family: var(--fuente-Noto);
+        font-style: italic;
+        font-weight: 700;
+        font-size: 30px;
+        color: var(--color-anaranjado); }
+      section.servicios .contentServicios .itemServicios .textoInfo p {
+        font-family: var(--fuente-Work);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 137.52%;
+        color: #fff; }
