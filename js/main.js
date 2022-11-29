@@ -1,3 +1,27 @@
+AOS.init();
+
+window.addEventListener("scroll", function () {
+    if (this.pageYOffset > 60) {
+        document.querySelector("header").classList.add("sticky");
+    }
+    else {
+        document.querySelector("header").classList.remove("sticky");
+    }
+});
+
+document.body.addEventListener("mousemove", e => {
+    gsap.to(".ht-cursor", {
+        x: e.clientX,
+        y: e.clientY,
+    })
+})
+
+$(".slider3item .swiper-slide").hover(function () {
+    $(".ht-cursor").addClass("mostrar");
+  }, function () {
+    $(".ht-cursor").removeClass("mostrar");
+  });
+
 MyApp = {
     slider1: {
         init: function () {
@@ -39,11 +63,68 @@ MyApp = {
                     }
                   })
             })
-            // console.log(categoria);
         }
     },
+    slider2: {
+        init: function () {
+            var swiper = new Swiper(".slider3item", {
+                slidesPerView: 3,
+                spaceBetween: 42,
+                loop: true,
+                noSwiping: true,
+                noSwipingClass: 'swiper-slide',
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                autoplay: {
+                    delay: 3500,
+                  },
+              });
+        }
+    },
+    slider3:{
+        init: function () {
+            var swiper = new Swiper(".swiperPop", {
+                pagination: {
+                  el: ".swiper-pagination",
+                  type: "fraction",
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+              });
+        }
+    },
+    slider4:{
+        init: function () {
+            console.log("asdasd");
+        }
+    }
 }
 
 if ($('.containerText ul').length > 0) {
     MyApp.slider1.init();
 }
+
+if ($('.slider3item').length > 0) {
+    MyApp.slider2.init();
+}
+if ($('.swiperPop').length > 0) {
+    MyApp.slider3.init();
+}
+if ($('.serviciosInterna').length > 0) {
+    MyApp.slider4.init();
+}
+
+document.addEventListener("click", (e) => {
+    if (e.target.closest(".containerGalery .slider3item .swiper-slide")) {
+      document.body.classList.add("hide-scrolling");
+      document.querySelector(".popUp").classList.add("mostrar");
+    }
+    if (e.target.closest(".popUp .top")) {
+        document.body.classList.remove("hide-scrolling");
+        document.querySelector(".popUp").classList.remove("mostrar");
+    }
+})
