@@ -99,7 +99,17 @@ MyApp = {
     },
     slider4:{
         init: function () {
-            console.log("asdasd");
+            document.querySelector(".serviciosInterna .containerDetalles li").classList.add("select");
+
+            let listaTitle = [];
+            const enlaces = document.querySelectorAll('.serviciosInterna .containerDetalles li');
+
+            enlaces.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    enlaces.forEach((enlace) => enlace.classList.remove('select'));
+                    evento.target.classList.add('select');
+                })
+            })
         }
     }
 }
