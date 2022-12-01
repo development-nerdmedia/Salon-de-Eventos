@@ -95,6 +95,7 @@ MyApp = {
                     delay: 3500,
                   },
               });
+              
         }
     },
     slider3:{
@@ -158,16 +159,35 @@ MyApp = {
             })
         }
     },
-    slider5:{
+    categoria:{
         init: function () {
 
-            
+            var catEx = sessionStorage.getItem('cat');
 
-            document.querySelector("#categorias li").classList.add("select");
+            if (catEx == "none") {
+                document.querySelector("#categorias li").classList.add("select");
+            }
 
-            var categoryMain = document.querySelector('#categorias li.select').innerHTML;   
+            let listaTitle = [];
             const enlaces = document.querySelectorAll('#categorias li');
+            
+            for (let i = 0; i < enlaces.length; i++) {
+                textoitem = enlaces[i].textContent;
+                listaTitle.push(textoitem);
+            }
+            
+            if (listaTitle.includes(catEx)) {
+                for (let y = 0; y < enlaces.length; y++) {
+                    if (catEx === enlaces[y].textContent) {
+                        document.querySelector("#categorias li").classList.remove("select");
+                        enlaces[y].classList.add('select')
+                    }
+                }
+            }
 
+            $('.itemEvento').hide();
+            
+            var categoryMain = document.querySelector('#categorias li.select').textContent;   
             if (categoryMain === "Todos") {
                 $(`.itemEvento`).show(0);
             } else {
@@ -186,34 +206,6 @@ MyApp = {
                   }
                 })
               })
-
-            document.addEventListener("click", (e) => {
-                if (e.target.closest("section.ContentEvent .contentEventos .itemEvento")) {
-
-                    var sliderImgs = e.target.querySelectorAll(".infoPop .imgs img");
-                    var contenedor = document.querySelector("section.popUp .contenidoPopUp .swiper .swiper-wrapper");
-
-                    console.log(sliderImgs);
-
-                    contenedor.innerHTML = '';
-
-                    for (let i = 0; i < sliderImgs.length; i++) {
-                        item2 = document.createElement("div");
-                        item2.setAttribute("class", "swiper-slide")
-                        item2.appendChild(sliderImgs[i])
-                        contenedor.appendChild(item2);
-                        itemfoto = document.createElement("img");
-                        itemfoto.setAttribute("src", sliderImgs[i].currentSrc);
-                        e.target.querySelector(".imgs").appendChild(itemfoto);
-                    }
-                    document.body.classList.add("hide-scrolling");
-                    document.querySelector(".popUp").classList.add("mostrar");
-                }
-                if (e.target.closest(".popUp .top")) {
-                    document.body.classList.remove("hide-scrolling");
-                    document.querySelector(".popUp").classList.remove("mostrar");
-                }
-            })
         }
     },
     form:{
@@ -336,7 +328,7 @@ if ($('.serviciosInterna').length > 0) {
 }
 
 if ($('.ContentEvent').length > 0) {
-    MyApp.slider5.init();
+    MyApp.categoria.init();
 }
 
 if ($('form').length > 0) {
@@ -351,5 +343,29 @@ document.addEventListener("click", (e) => {
     if (e.target.closest(".popUp .top")) {
         document.body.classList.remove("hide-scrolling");
         document.querySelector(".popUp").classList.remove("mostrar");
+    }
+    if (e.target.closest("header nav .navigation ul li")) {
+        sessionStorage.setItem('cat', "none");
+    }
+    if (e.target.closest(".itemEvento")) {
+
+        var sliderImgs = e.target.querySelectorAll(".infoPop .imgs img");
+        var contenedor = document.querySelector("section.popUp .contenidoPopUp .swiper .swiper-wrapper");
+
+        console.log(sliderImgs);
+
+        contenedor.innerHTML = '';
+
+        for (let i = 0; i < sliderImgs.length; i++) {
+            item2 = document.createElement("div");
+            item2.setAttribute("class", "swiper-slide")
+            item2.appendChild(sliderImgs[i])
+            contenedor.appendChild(item2);
+            itemfoto = document.createElement("img");
+            itemfoto.setAttribute("src", sliderImgs[i].currentSrc);
+            e.target.querySelector(".imgs").appendChild(itemfoto);
+        }
+        document.body.classList.add("hide-scrolling");
+        document.querySelector(".popUp").classList.add("mostrar");
     }
 })

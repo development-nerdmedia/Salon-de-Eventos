@@ -23,15 +23,15 @@
                 </div>
                 <div class="navigation">
                     <ul>
-                        <li><a href="pages/salon.html">Salón</a></li>
-                        <li class="fex"><a href="#">Servicios</a>
+                        <li><a href="pages/salon.html" class="hvr-underline-from-left">Salón</a></li>
+                        <li class="fex"><a href="#" class="hvr-underline-from-left">Servicios</a>
                             <ul>
                                 <li><a href="pages/serviciosincluidos.html">Servicios incluidos</a></li>
                                 <li><a href="pages/serviciosadicionales.html">Servicios adicionales</a></li>
                             </ul>
                         </li>
-                        <li><a href="pages/eventos.html">Eventos</a></li>
-                        <li><a href="pages/cotizacion.html">Cotizaciones</a></li>
+                        <li><a href="pages/eventos.html" class="hvr-underline-from-left">Eventos</a></li>
+                        <li><a href="pages/cotizaciones.html" class="hvr-underline-from-left">Cotizaciones</a></li>
                     </ul>
                 </div>
             </nav>
@@ -46,8 +46,8 @@
         <section class="home">
             <div class="homeBg">
                 <div class="filtro-video"></div>
-                <!-- <video src="https://www.youtube.com/watch?v=bUXPB6T8gpw" autoplay="" muted="" playsinline="" loop="" preload="none" poster="img/video-home.jpg"></video> -->
-                <iframe width="1920" height="1080" src="https://www.youtube.com/embed/bUXPB6T8gpw?start=0&autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video src="https://www.youtube.com/watch?v=bUXPB6T8gpw" autoplay="" muted="" playsinline="" loop="" preload="none" poster="img/video-home.jpg"></video>
+                <!-- <iframe width="1920" height="1080" src="https://www.youtube.com/embed/bUXPB6T8gpw?start=0&autoplay=1&mute=1&controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
             <div class="container">
                 <a href="pages/salon.html" class="btnFloat">Salón <br> M&C</a>
@@ -159,55 +159,80 @@
                 <h2>Últimos eventos</h2>
                 <div class="swiper slider3item">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <a href="">
+                      <div class="swiper-slide itemEvento">
                         <div class="filtro"></div>
                         <img src="img/slider-1.jpg" alt="">
                         <div class="info">
                             <span>Boda</span>
                             <p>Juan & María</p>
                         </div>
-                        </a>
+                        <div class="infoPop">
+                            <div class="imgs">
+                                <img src="../img/slider-1.jpg" alt="">
+                                <img src="../img/slider-1.jpg" alt="">
+                                <img src="../img/slider-1.jpg" alt="">
+                            </div>
+                        </div>
                       </div>
-                      <div class="swiper-slide">
-                        <a href="">
+                      <div class="swiper-slide itemEvento">
                         <div class="filtro"></div>
                         <img src="img/slider-2.jpg" alt="">
                         <div class="info">
                             <span>Boda</span>
                             <p>Juan & María</p>
                         </div>
-                        </a>
+                        <div class="infoPop">
+                            <div class="imgs">
+                                <img src="../img/eventos-2.jpg" alt="">
+                                <img src="../img/eventos-2.jpg" alt="">
+                                <img src="../img/eventos-2.jpg" alt="">
+                            </div>
+                        </div> 
                       </div>
-                      <div class="swiper-slide">
-                        <a href="">
+                      <div class="swiper-slide itemEvento">
                         <div class="filtro"></div>
                         <img src="img/slider-3.jpg" alt="">
                         <div class="info">
                             <span>Boda</span>
                             <p>Juan & María</p>
                         </div>
-                        </a>
+                        <div class="infoPop">
+                            <div class="imgs">
+                                <img src="../img/eventos-3.jpg" alt="">
+                                <img src="../img/eventos-3.jpg" alt="">
+                                <img src="../img/eventos-3.jpg" alt="">
+                            </div>
+                        </div> 
                       </div>
-                      <div class="swiper-slide">
-                        <a href="">
+                      <div class="swiper-slide itemEvento">
                         <div class="filtro"></div>
                         <img src="img/slider-1.jpg" alt="">
                         <div class="info">
                             <span>Boda</span>
                             <p>Juan & María</p>
                         </div>
-                        </a>
+                        <div class="infoPop">
+                            <div class="imgs">
+                                <img src="../img/slider-1.jpg" alt="">
+                                <img src="../img/slider-1.jpg" alt="">
+                                <img src="../img/slider-1.jpg" alt="">
+                            </div>
+                        </div> 
                       </div>
-                      <div class="swiper-slide">
-                        <a href="">
+                      <div class="swiper-slide itemEvento">
                         <div class="filtro"></div>
                         <img src="img/slider-2.jpg" alt="">
                         <div class="info">
                             <span>Boda</span>
                             <p>Juan & María</p>
                         </div>
-                        </a>
+                        <div class="infoPop">
+                            <div class="imgs">
+                                <img src="../img/eventos-2.jpg" alt="">
+                                <img src="../img/eventos-2.jpg" alt="">
+                                <img src="../img/eventos-2.jpg" alt="">
+                            </div>
+                        </div> 
                       </div>
                     </div>
                     <div class="swiper-pagination">
@@ -219,7 +244,29 @@
         <section class="call">
             <div class="container">
                 <h2>¿Tienes algún evento?</h2>
-                <a href="#">Solicita tu cotización <img src="img/flecha-black.svg" alt=""></a>
+                <a href="pages/cotizaciones.html">Solicita tu cotización <img src="img/flecha-black.svg" alt=""></a>
+            </div>
+        </section>
+
+        <section class="popUp">
+            <div class="container">
+                <div class="top">
+                    <img src="../img/close-popUp.svg" alt="">
+                </div>
+                <div class="contenidoPopUp">
+                    <div class="sliderPopUp">
+                        <div class="swiper swiperPop">
+                            <div class="swiper-wrapper">                   
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <p>Salon M&C</p>                        
+                    </div>
+                </div>
             </div>
         </section>
 
