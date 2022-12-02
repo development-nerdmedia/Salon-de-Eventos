@@ -82,8 +82,7 @@ MyApp = {
     slider2: {
         init: function () {
             var swiper = new Swiper(".slider3item", {
-                slidesPerView: 3,
-                spaceBetween: 42,
+                slidesPerView: 3,                
                 loop: true,
                 noSwiping: true,
                 noSwipingClass: 'swiper-slide',
@@ -93,9 +92,19 @@ MyApp = {
                 },
                 autoplay: {
                     delay: 3500,
-                  },
-              });
-              
+                },
+                breakpoints: {
+                    '1441':{
+                        spaceBetween: 42,
+                    },
+                    '1281':{
+                        spaceBetween: 36,
+                    },
+                    '1025':{
+                        spaceBetween: 31,
+                    },
+                }
+            });              
         }
     },
     slider3:{
