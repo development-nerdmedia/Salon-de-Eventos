@@ -103,6 +103,9 @@ MyApp = {
                     '1025':{
                         spaceBetween: 31,
                     },
+                    '769':{
+                        spaceBetween: 27,
+                    },
                 }
             });              
         }
@@ -140,6 +143,7 @@ MyApp = {
                     var catPrincipal = evento.target.classList[0];
 
                     tituloServicioInterna.classList.remove('select');
+
                     setTimeout(() => {
                         tituloServicioInterna.innerHTML = tituloPrincipal;
                         tituloServicioInterna.classList.add('select');
@@ -157,7 +161,6 @@ MyApp = {
                         document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.remove('select');
                         setTimeout(() => {
                             if (parrafosServiciosInterna[i].getAttribute("data-category") === catPrincipal) {
-                                console.log("se encontro");
                                 document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.add('select');
                                 var textContent = parrafosServiciosInterna[i].innerHTML;
                                 document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").innerHTML=textContent;
@@ -361,7 +364,15 @@ document.addEventListener("click", (e) => {
         var sliderImgs = e.target.querySelectorAll(".infoPop .imgs img");
         var contenedor = document.querySelector("section.popUp .contenidoPopUp .swiper .swiper-wrapper");
 
-        console.log(sliderImgs);
+        var textoCategoria = e.target.querySelector(".info span").textContent;
+        var textoEvento = e.target.querySelector(".info p").textContent;
+
+        var textoCategoriaPop = document.querySelector("section.popUp .contenidoPopUp .info span")
+        var textoEventoPop = document.querySelector("section.popUp .contenidoPopUp .info p")
+
+
+        textoCategoriaPop.innerHTML = textoCategoria;
+        textoEventoPop.innerHTML = textoEvento;
 
         contenedor.innerHTML = '';
 
@@ -374,7 +385,11 @@ document.addEventListener("click", (e) => {
             itemfoto.setAttribute("src", sliderImgs[i].currentSrc);
             e.target.querySelector(".imgs").appendChild(itemfoto);
         }
+
         document.body.classList.add("hide-scrolling");
         document.querySelector(".popUp").classList.add("mostrar");
     }
+    if (e.target.closest("header nav .navigation ul li.menu-mobile img") || e.target.closest(".menuMovil .top .close img")) {
+        document.querySelector("section.menuMovil").classList.toggle("open");
+      }
 })
