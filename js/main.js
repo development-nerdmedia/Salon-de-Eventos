@@ -104,6 +104,15 @@ MyApp = {
                         spaceBetween: 31,
                     },
                     '769':{
+                        slidesPerView: 3,  
+                        spaceBetween: 27,
+                    },
+                    '551':{
+                        slidesPerView: 2,  
+                        spaceBetween: 27,
+                    },
+                    '375':{
+                        slidesPerView: 1,  
                         spaceBetween: 27,
                     },
                 }
@@ -113,6 +122,8 @@ MyApp = {
     slider3:{
         init: function () {
             var swiper = new Swiper(".swiperPop", {
+                noSwiping: true,
+                noSwipingClass: 'swiper-slide',
                 pagination: {
                   el: ".swiper-pagination",
                   type: "fraction",
@@ -349,12 +360,28 @@ if ($('form').length > 0) {
 
 document.addEventListener("click", (e) => {
     if (e.target.closest(".containerGalery .slider3item .swiper-slide")) {
-      document.body.classList.add("hide-scrolling");
-      document.querySelector(".popUp").classList.add("mostrar");
+        var titlePage = document.querySelector("section.banner h2").textContent;
+        var textoEventoPop = document.querySelector("section.popUp .contenidoPopUp .info p")
+        textoEventoPop.innerHTML = titlePage;
+        document.body.classList.add("hide-scrolling");
+        document.querySelector(".popUp").classList.add("mostrar");
+
+        setTimeout(() => {
+            var indicadorVariable = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-current").textContent;
+            var indicadorTotal = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-total").textContent;
+            var indicadorVariablePop = document.querySelector("section.popUp .contenidoPopUp .info .newPaginacion span.current");
+            var indicadorTotalPop = document.querySelector("section.popUp .contenidoPopUp .info .newPaginacion span.total");
+    
+            indicadorVariablePop.innerHTML = indicadorVariable;
+            indicadorTotalPop.innerHTML = indicadorTotal;
+            
+        }, 100);
     }
     if (e.target.closest(".popUp .top")) {
         document.body.classList.remove("hide-scrolling");
         document.querySelector(".popUp").classList.remove("mostrar");
+        // var contenedor = document.querySelector("section.popUp .contenidoPopUp .swiper .swiper-wrapper");
+        // contenedor.innerHTML = '';
     }
     if (e.target.closest("header nav .navigation ul li")) {
         sessionStorage.setItem('cat', "none");
@@ -367,8 +394,8 @@ document.addEventListener("click", (e) => {
         var textoCategoria = e.target.querySelector(".info span").textContent;
         var textoEvento = e.target.querySelector(".info p").textContent;
 
-        var textoCategoriaPop = document.querySelector("section.popUp .contenidoPopUp .info span")
-        var textoEventoPop = document.querySelector("section.popUp .contenidoPopUp .info p")
+        var textoCategoriaPop = document.querySelector("section.popUp .contenidoPopUp .info span.category")
+        var textoEventoPop = document.querySelector("section.popUp .contenidoPopUp .info p.name")
 
 
         textoCategoriaPop.innerHTML = textoCategoria;
@@ -386,9 +413,30 @@ document.addEventListener("click", (e) => {
             e.target.querySelector(".imgs").appendChild(itemfoto);
         }
 
+        
+
+
         document.body.classList.add("hide-scrolling");
         document.querySelector(".popUp").classList.add("mostrar");
+
+        setTimeout(() => {
+            var indicadorVariable = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-current").textContent;
+            var indicadorTotal = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-total").textContent;
+            var indicadorVariablePop = document.querySelector("section.popUp .contenidoPopUp .info .newPaginacion span.current");
+            var indicadorTotalPop = document.querySelector("section.popUp .contenidoPopUp .info .newPaginacion span.total");
+    
+            indicadorVariablePop.innerHTML = indicadorVariable;
+            indicadorTotalPop.innerHTML = indicadorTotal;
+            
+        }, 100);
     }
+
+    if (e.target.closest("section.popUp .contenidoPopUp .info .flechas .swiper-button-next") || e.target.closest("section.popUp .contenidoPopUp .info .flechas .swiper-button-prev")) {
+        var indicadorVariable2 = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-current").textContent;
+        var indicadorVariablePop2 = document.querySelector("section.popUp .contenidoPopUp .info .newPaginacion span.current");
+        indicadorVariablePop2.innerHTML = indicadorVariable2;
+    }
+    
     if (e.target.closest("header nav .navigation ul li.menu-mobile img") || e.target.closest(".menuMovil .top .close img")) {
         document.querySelector("section.menuMovil").classList.toggle("open");
       }
