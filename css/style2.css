@@ -98,7 +98,8 @@ header {
         bottom: -6px;
         width: 100%;
         background: var(--color-anaranjado);
-        height: 4px;
+        height: 3px;
+        border-radius: 15px;
         left: 0; }
     header nav .navigation ul li.select li a {
       color: var(--color-oscuro); }
@@ -124,7 +125,8 @@ header::before {
 header.sticky::before {
   transform: translateY(0%); }
 
-.ht-cursor {
+.ht-cursor,
+.ht-cursor2 {
   position: fixed;
   pointer-events: none;
   z-index: 999;
@@ -132,7 +134,8 @@ header.sticky::before {
   top: -65px;
   left: -65px;
   z-index: 50; }
-  .ht-cursor .ht-cursor-text {
+  .ht-cursor .ht-cursor-text,
+  .ht-cursor2 .ht-cursor-text2 {
     background: linear-gradient(139.81deg, #C2902F 14.04%, #FFEB77 35.42%, #C2902F 58.47%, #FFEB77 78.18%);
     position: relative;
     display: flex;
@@ -150,8 +153,12 @@ header.sticky::before {
     font-weight: 700;
     font-size: 20px; }
 
-.ht-cursor.mostrar .ht-cursor-text {
+.ht-cursor.mostrar .ht-cursor-text,
+.ht-cursor2.mostrar .ht-cursor-text2 {
   transform: scale(1); }
+
+
+
 
 section.menuMovil,
 section.serviciosInterna .containerDetalles form {
@@ -711,7 +718,7 @@ section.serviciosInterna {
         font-weight: 600;
         font-size: 20px;
         margin: 20px 0;
-        padding: 30px 0;
+        padding: 15px 0;
         cursor: pointer;
         border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
@@ -895,8 +902,8 @@ section.ContentEvent {
   section.ContentEvent .contentCategorias ul li {
     list-style: none;
     display: inline-block;
-    padding: 24px 20px;
-    border: 3px solid #FFF;
+    padding: 10px 15px;
+    border: 2px solid #FFF;
     border-radius: 40px;
     color: #FFF;
     font-family: var(--fuente-Work);
@@ -910,7 +917,7 @@ section.ContentEvent {
     margin-right: 0; }
   section.ContentEvent .contentCategorias ul li.select {
     background-color: var(--color-anaranjado);
-    border: 3px solid var(--color-anaranjado);
+    border: 2px solid var(--color-anaranjado);
     color: var(--color-oscuro); }
   section.ContentEvent .contentEventos {
     margin-top: 60px;
