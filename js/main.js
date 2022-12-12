@@ -359,7 +359,7 @@ if ($('form').length > 0) {
 }
 
 document.addEventListener("click", (e) => {
-    if (e.target.closest(".containerGalery .slider3item .swiper-slide")) {
+    if (e.target.closest(".containerGalery .slider3item .swiper-slide") || e.target.closest("section.galery .title .buttonFlecha")) {
         var titlePage = document.querySelector("section.banner h2").textContent;
         var textoEventoPop = document.querySelector("section.popUp .contenidoPopUp .info p")
         textoEventoPop.innerHTML = titlePage;
