@@ -37,7 +37,8 @@ body {
   right: 100%;
   bottom: -6px;
   background: var(--color-anaranjado);
-  height: 4px;
+  border-radius: 10px;
+  height: 3px;
   -webkit-transition-property: right;
   transition-property: right;
   -webkit-transition-duration: 0.3s;
@@ -98,7 +99,8 @@ header {
         bottom: -6px;
         width: 100%;
         background: var(--color-anaranjado);
-        height: 4px;
+        height: 3px;
+        border-radius: 10px;
         left: 0; }
     header nav .navigation ul li.select li a {
       color: var(--color-oscuro); }
@@ -250,7 +252,8 @@ h2 {
     left: 50%;
     transform: translateX(-50%); }
 
-a.buttonFlecha {
+a.buttonFlecha,
+button.buttonFlecha {
   text-decoration: none;
   font-family: var(--fuente-Work);
   font-style: normal;
@@ -261,15 +264,21 @@ a.buttonFlecha {
   display: flex;
   align-items: center;
   width: fit-content;
-  padding-right: 15px; }
-  a.buttonFlecha span {
+  padding-right: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+  a.buttonFlecha span,
+  button.buttonFlecha span {
     padding-left: 5px; }
-  a.buttonFlecha .img {
+  a.buttonFlecha .img,
+  button.buttonFlecha .img {
     margin-left: 20px;
     position: relative;
     display: flex;
     z-index: 2; }
-    a.buttonFlecha .img::before {
+    a.buttonFlecha .img::before,
+    button.buttonFlecha .img::before {
       content: '';
       width: 40px;
       height: 40px;
@@ -281,7 +290,8 @@ a.buttonFlecha {
       background-color: transparent;
       border: 2px solid #fff;
       z-index: -1; }
-  a.buttonFlecha:hover .img img {
+  a.buttonFlecha:hover .img img,
+  button.buttonFlecha:hover .img img {
     animation-timing-function: linear;
     animation-duration: 1s;
     animation-name: hoverImg;
@@ -525,7 +535,7 @@ section.call {
     section.call h2::after {
       background-image: url(../img/figura-black.svg); }
   section.call a {
-    padding: 25px 30px;
+    padding: 15px 20px;
     border-radius: 36px;
     border: 3px solid #181312;
     font-family: var(--fuente-Work);
@@ -536,9 +546,28 @@ section.call {
     align-items: center;
     text-decoration: none;
     color: #000;
-    margin-top: 30px; }
+    margin-top: 30px;
+    position: relative;
+    padding-right: 68px; }
     section.call a img {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       margin-left: 20px; }
+    section.call a:hover img {
+      animation-timing-function: linear;
+      animation-duration: 1s;
+      animation-name: flechaAnimation;
+      animation-iteration-count: infinite; }
+
+@keyframes flechaAnimation {
+  0% {
+    transform: translateX(0px) translateY(-50%); }
+  50% {
+    transform: translateX(5px) translateY(-50%); }
+  100% {
+    transform: translateX(0px) translateY(-50%); } }
 
 footer {
   padding-top: 100px; }
@@ -711,7 +740,7 @@ section.serviciosInterna {
         font-weight: 600;
         font-size: 20px;
         margin: 20px 0;
-        padding: 30px 0;
+        padding: 15px 0;
         cursor: pointer;
         border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
@@ -895,8 +924,8 @@ section.ContentEvent {
   section.ContentEvent .contentCategorias ul li {
     list-style: none;
     display: inline-block;
-    padding: 24px 20px;
-    border: 3px solid #FFF;
+    padding: 15px;
+    border: 2px solid #FFF;
     border-radius: 40px;
     color: #FFF;
     font-family: var(--fuente-Work);
@@ -910,7 +939,7 @@ section.ContentEvent {
     margin-right: 0; }
   section.ContentEvent .contentCategorias ul li.select {
     background-color: var(--color-anaranjado);
-    border: 3px solid var(--color-anaranjado);
+    border: 2px solid var(--color-anaranjado);
     color: var(--color-oscuro); }
   section.ContentEvent .contentEventos {
     margin-top: 60px;
@@ -1068,15 +1097,26 @@ form .btn-enviar {
     font-family: var(--fuente-Work);
     font-weight: 600;
     font-size: 20px;
-    padding: 20px 40px;
+    padding: 15px 20px;
     border: 3px solid #C2902F;
     border-radius: 36px;
     background-color: transparent;
     display: flex;
     align-items: center;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    padding-right: 68px; }
     form .btn-enviar button img {
-      margin-left: 10px; }
+      margin-left: 10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px; }
+    form .btn-enviar button:hover img {
+      animation-timing-function: linear;
+      animation-duration: 1s;
+      animation-name: flechaAnimation;
+      animation-iteration-count: infinite; }
 
 section.bannerContacto {
   background: linear-gradient(94.16deg, #C2902F 32.82%, #FFEB77 79.46%);

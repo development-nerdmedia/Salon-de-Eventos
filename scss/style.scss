@@ -43,7 +43,8 @@ body{
     right: 100%;
     bottom: -6px;
     background: var(--color-anaranjado);
-    height: 4px;
+    border-radius: 10px;
+    height: 3px;
     -webkit-transition-property: right;
     transition-property: right;
     -webkit-transition-duration: 0.3s;
@@ -122,7 +123,8 @@ header{
                             bottom: -6px;
                             width: 100%;
                             background: var(--color-anaranjado);
-                            height: 4px;
+                            height: 3px;
+                            border-radius: 10px;
                             left: 0;
                         }
                     }
@@ -316,7 +318,8 @@ h2{
     }
 }
 
-a.buttonFlecha{
+a.buttonFlecha,
+button.buttonFlecha{
     text-decoration: none;
     font-family: var(--fuente-Work);
     font-style: normal;
@@ -328,6 +331,9 @@ a.buttonFlecha{
     align-items: center;
     width: fit-content;
     padding-right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     span{
         padding-left: 5px;
     }
@@ -361,6 +367,7 @@ a.buttonFlecha{
         }
     }
 }
+
 
 @keyframes hoverImg {
     0%{
@@ -662,7 +669,7 @@ section.call{
         }
     }
     a{
-        padding: 25px 30px;
+        padding: 15px 20px;
         border-radius: 36px;
         border: 3px solid #181312;
         font-family: var(--fuente-Work);
@@ -674,9 +681,35 @@ section.call{
         text-decoration: none;
         color: #000;
         margin-top: 30px;
+        position: relative;
+        padding-right: 68px;
         img{
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             margin-left: 20px;
         }
+        &:hover{
+            img{
+                animation-timing-function: linear;
+                animation-duration: 1s;
+                animation-name: flechaAnimation;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+}
+
+@keyframes flechaAnimation {
+    0%{
+        transform: translateX(0px) translateY(-50%);
+    }
+    50%{
+        transform: translateX(5px) translateY(-50%);
+    }
+    100%{
+        transform: translateX(0px) translateY(-50%);
     }
 }
 
@@ -892,7 +925,7 @@ section.serviciosInterna{
                     font-weight: 600;
                     font-size: 20px;
                     margin: 20px 0;
-                    padding: 30px 0;
+                    padding: 15px 0;
                     cursor: pointer;
                     border-top: 3px solid transparent;
                     border-bottom: 3px solid transparent;
@@ -1131,8 +1164,8 @@ section.ContentEvent{
             li{
                 list-style: none;
                 display: inline-block;
-                padding: 24px 20px;
-                border: 3px solid #FFF;
+                padding: 15px;
+                border: 2px solid #FFF;
                 border-radius: 40px;
                 color: #FFF;
                 font-family: var(--fuente-Work);
@@ -1149,7 +1182,7 @@ section.ContentEvent{
             }
             li.select{
                 background-color: var(--color-anaranjado);
-                border: 3px solid var(--color-anaranjado);
+                border: 2px solid var(--color-anaranjado);
                 color: var(--color-oscuro);
             }
         }
@@ -1348,15 +1381,29 @@ form{
             font-family: var(--fuente-Work);
             font-weight: 600;
             font-size: 20px;
-            padding: 20px 40px;
+            padding: 15px 20px;
             border: 3px solid #C2902F;
             border-radius: 36px;
             background-color: transparent;
             display: flex;
             align-items: center;
             cursor: pointer;
+            position: relative;
+            padding-right: 68px;
             img{
                 margin-left: 10px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+            }
+            &:hover{
+                img{
+                    animation-timing-function: linear;
+                    animation-duration: 1s;
+                    animation-name: flechaAnimation;
+                    animation-iteration-count: infinite;
+                }
             }
         }
     }
