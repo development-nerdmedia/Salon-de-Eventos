@@ -890,6 +890,7 @@ section.banner{
         z-index: 3;
         font-size: 70px;
         padding-bottom: 0;
+        margin: 0 20px;
         &::after{
             bottom: -23px;
         }
@@ -1063,7 +1064,8 @@ section.galery{
 }
 
 body.servicios{
-    section.galery{
+    section.galery,
+    section.bajadaSalon{
         padding: 100px 0;
     }
 }
@@ -1128,7 +1130,7 @@ section.popUp{
         .info{
             width: 40%;
             position: relative;
-            margin-left: 70px;
+            margin-left: 50px;
             display: flex;
             align-items: flex-start;
             flex-direction: column;
@@ -1162,8 +1164,8 @@ section.popUp{
                 flex-direction: row-reverse;
                 justify-content: flex-end;
                 align-items: center;
-                padding-left: 16px;
-                grid-gap: 50px;
+                // padding-left: 16px;
+                grid-gap: 30px;
                 margin-bottom: 15px;
                 .swiper-button-next,
                 .swiper-button-prev{
@@ -1172,11 +1174,26 @@ section.popUp{
                     right: initial;
                 }
             }
+            .swiper-button-next,
+            .swiper-button-prev{
+                width: 57px;
+                height: 51px;
+            }
             .swiper-button-next:after{
-                content: url(../img/flecha-next-slider-popup.svg);
+                content: '';
+                background-image: url(../img/flecha-next-slider-popup.svg);
+                background-size: 100%;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
             }
             .swiper-button-prev:after {
-                content: url(../img/flecha-prev-slider-popup.svg);
+                content: '';
+                background-image: url(../img/flecha-prev-slider-popup.svg);
+                background-size: 100%;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
             }
             .swiper-button-next, .swiper-button-prev{
                 top: initial;
@@ -1740,6 +1757,8 @@ section.thanks{
         padding-right: 209px;
     }
     section.popUp .contenidoPopUp .info p,
+    section.popUp .contenidoPopUp .info span,
+    section.popUp .contenidoPopUp .info .newPaginacion,
     section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction{
         font-size: 35px;
     }
@@ -1914,7 +1933,8 @@ section.thanks{
         padding: 80px 0;
         padding-bottom: 0;
     }
-    section.serviciosHome {
+    section.serviciosHome,
+    section.bajadaSalon {
         padding: 80px 0;
         padding-bottom: 40px;
     }
@@ -2010,7 +2030,9 @@ section.thanks{
     section.popUp .contenidoPopUp .info{
         margin-left: 35px;
     }
-    
+    section.popUp .top img{
+        width: 70px;
+    }
 
     /* end 1024 */
 }
@@ -2101,6 +2123,25 @@ section.thanks{
     display: none;
 }
 
+@media (max-width: 930px) {
+    footer .logo {
+        justify-content: flex-start;
+    }
+    footer .datos {
+        flex-direction: column;
+    }
+    footer .datos .infoContact {
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+    footer .datos .infoContact p {
+        padding-bottom: 30px;
+    }
+    footer .datos .infoContact .redes {
+        align-items: flex-start;
+    }
+}
+
 @media (max-width: 900px) {
     section.serviciosHome {
         flex-direction: column;
@@ -2184,6 +2225,17 @@ section.thanks{
     }
     section.servicios .contentServicios .itemServicios:last-child {
         margin-bottom: 0px;
+    }
+    section.ContentEvent .contentCategorias form select{
+        width: 100%;
+        background-color: var(--color-anaranjado);
+        font-family: var(--fuente-Work);
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 40px;
+        padding: 24px;
+        outline: none !important;
+        appearance: none;
     }
 }
 
@@ -2346,7 +2398,7 @@ section.thanks{
         width: auto;
         position: absolute;
         top: 25px;
-        right: 17px;
+        right: 0;
     }
     section.popUp .contenidoPopUp .info{
         position: relative;
@@ -2364,6 +2416,44 @@ section.thanks{
     section.serviciosInterna .containerDetalles form {
         display: block;
         margin-bottom: 50px;
+        position: relative;
+        padding: 30px 0;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 3px;
+            top: 0;
+            background-color: var(--color-oscuro);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 3px;
+            bottom: 0;
+            background-color: var(--color-oscuro);
+        }
+        img{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+    section.serviciosInterna .containerDetalles form select{
+        background-color: transparent;
+        border: none;
+        outline: none !important;
+        appearance: none;
+        font-family: var(--fuente-Work);
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--color-oscuro);
+        // padding: 30px 0;
+        width: 87%;
     }
     section.serviciosInterna .containerDetalles{
         flex-direction: column;
@@ -2372,6 +2462,19 @@ section.thanks{
         width: 100%;
     }
     
+    section.popUp .top{
+        top: -35px;
+    }
+
+    section.galery .title button{
+        display: none;
+    }
+
+    section.banner h2 {
+        font-size: 45px;
+    }
+
+
 
     /* END 768px */
 }
@@ -2386,6 +2489,9 @@ section.thanks{
     }
     footer .pie div{
         margin-top: 10px;
+    }
+    section.banner h2 {
+        font-size: 40px;
     }
 }
 
@@ -2413,6 +2519,20 @@ section.thanks{
     section.serviciosHome .containerText ul{
         transform: translateY(-51px);
     }
+
+    section.popUp .contenidoPopUp .info p, section.popUp .contenidoPopUp .info span, section.popUp .contenidoPopUp .info .newPaginacion, section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction{
+        font-size: 30px;
+    }
+    section.popUp .contenidoPopUp .info .flechas{
+        top: 21px;
+        grid-gap: 20px;
+    }
+    section.popUp .contenidoPopUp .info .swiper-button-next, section.popUp .contenidoPopUp .info .swiper-button-prev {
+        width: 50px;
+        height: 45px;
+    }
+
+    /* end 500px */
 }
 
 
