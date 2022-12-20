@@ -578,7 +578,6 @@ section.serviciosHome{
         .textoP{
             display: none;
         }
-        
     }
 }
 
@@ -2640,6 +2639,14 @@ section.thanks{
 @media (max-width: 425px) {
     section.menuMovil ul li, section.menuMovil ul li a {
         font-size: 30px;
+    }
+    section.serviciosHome a.buttonFlecha{
+        display: block;
+        .img{
+            width: fit-content;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
     }
 }
 
