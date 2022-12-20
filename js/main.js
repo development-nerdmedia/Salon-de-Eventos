@@ -219,6 +219,8 @@ MyApp = {
 
             if (catEx == "none") {
                 document.querySelector("#categorias li").classList.add("select");
+            }else{
+                $("#opcionesEventos").val(`${catEx}`)
             }
 
             let listaTitle = [];
@@ -259,6 +261,16 @@ MyApp = {
                     }
                 })
             })
+
+            $("#opcionesEventos").change(function () {
+                var eleccionPrincipalSelect = $("#opcionesEventos").val();
+                $(`.itemEvento`).not(`[data-category="${eleccionPrincipalSelect}"]`).hide();
+                $(`.itemEvento[data-category="${eleccionPrincipalSelect}"]`).show();
+                if (eleccionPrincipalSelect === "Todos") {
+                    $(`.itemEvento`).show();
+                }
+            })
+
         }
     },
     form: {
