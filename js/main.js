@@ -139,8 +139,6 @@ MyApp = {
         init: function () {
             document.querySelector(".serviciosInterna .containerDetalles li").classList.add("select");
 
-            let listaTitle = [];
-
             const enlaces = document.querySelectorAll('.serviciosInterna .containerDetalles li');
             const tituloServicioInterna = document.querySelector('section.serviciosInterna .containerDetalles .info h3');
             const parrafosServiciosInterna = document.querySelectorAll('section.serviciosInterna .containerDetalles .info .textoP p');
@@ -151,7 +149,7 @@ MyApp = {
                     enlaces.forEach((enlace) => enlace.classList.remove('select'));
                     evento.target.classList.add('select');
                     var tituloPrincipal = evento.target.textContent;
-                    var catPrincipal = evento.target.classList[0];
+                    var catPrincipal = evento.target.getAttribute("data-category");
 
                     tituloServicioInterna.classList.remove('select');
 
@@ -162,7 +160,7 @@ MyApp = {
 
                     for (let y = 0; y < imgsServiciosInterna.length; y++) {
                         imgsServiciosInterna[y].classList.remove('select');
-                        if (imgsServiciosInterna[y].getAttribute("data-category") === catPrincipal) {
+                        if (imgsServiciosInterna[y].getAttribute("data-category") === tituloPrincipal) {
                             imgsServiciosInterna[y].classList.add('select');
                         }
                     }
@@ -171,7 +169,7 @@ MyApp = {
                     for (let i = 0; i < parrafosServiciosInterna.length; i++) {
                         document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.remove('select');
                         setTimeout(() => {
-                            if (parrafosServiciosInterna[i].getAttribute("data-category") === catPrincipal) {
+                            if (parrafosServiciosInterna[i].getAttribute("data-category") === tituloPrincipal) {
                                 document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.add('select');
                                 var textContent = parrafosServiciosInterna[i].innerHTML;
                                 document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").innerHTML = textContent;
@@ -193,7 +191,7 @@ MyApp = {
 
                 for (let y = 0; y < imgsServiciosInterna.length; y++) {
                     imgsServiciosInterna[y].classList.remove('select');
-                    if (imgsServiciosInterna[y].getAttribute("data-category-select") === tituloPrincipalSelect) {
+                    if (imgsServiciosInterna[y].getAttribute("data-category") === tituloPrincipalSelect) {
                         imgsServiciosInterna[y].classList.add('select');
                     }
                 }
@@ -201,7 +199,7 @@ MyApp = {
                 for (let i = 0; i < parrafosServiciosInterna.length; i++) {
                     document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.remove('select');
                     setTimeout(() => {
-                        if (parrafosServiciosInterna[i].getAttribute("data-category-select") === tituloPrincipalSelect) {
+                        if (parrafosServiciosInterna[i].getAttribute("data-category") === tituloPrincipalSelect) {
                             document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").classList.add('select');
                             var textContent = parrafosServiciosInterna[i].innerHTML;
                             document.querySelector("section.serviciosInterna .containerDetalles .info .textInfo p").innerHTML = textContent;
