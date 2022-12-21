@@ -2009,6 +2009,10 @@ section.thanks {
     font-size: 35px; }
   section.menuMovil ul li ul {
     margin-left: 21px; }
+  header nav .logo a img, section.menuMovil .top a img {
+    width: 130px; }
+  header::before {
+    height: 119px; }
   /* end 500px */ }
 
 @media (max-width: 425px) {

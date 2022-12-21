@@ -2633,6 +2633,13 @@ section.thanks{
         margin-left: 21px;
     }
 
+    header nav .logo a img, section.menuMovil .top a img {
+        width: 130px;
+    }
+    header::before {
+        height: 119px;
+    }
+
     /* end 500px */
 }
 
