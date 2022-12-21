@@ -182,7 +182,8 @@ header.sticky::before {
     transform: translateY(0%);  
 }
 
-.ht-cursor{
+.ht-cursor,
+.ht-cursor2{
     position: fixed;
     pointer-events: none;
     z-index: 999;
@@ -192,7 +193,8 @@ header.sticky::before {
     top: -65px;
     left: -65px;
     z-index: 50;
-    .ht-cursor-text{
+    .ht-cursor-text,
+    .ht-cursor-text2{
         background: linear-gradient(139.81deg, #C2902F 14.04%, #FFEB77 35.42%, #C2902F 58.47%, #FFEB77 78.18%);
         position: relative;
         display: flex;
@@ -212,8 +214,10 @@ header.sticky::before {
     }
 }
 
-.ht-cursor.mostrar{
-  .ht-cursor-text{
+.ht-cursor.mostrar,
+.ht-cursor2.mostrar{
+  .ht-cursor-text,
+  .ht-cursor-text2{
     transform: scale(1);
   }
 }
@@ -293,20 +297,25 @@ section.home{
                 height: 150%;
                 // background-color: rgb(255, 255, 255);
                 top: -25px;
-                left: 60px;
+                left: -150px;
                 // border-bottom: 0 solid #ffffff05;
                 box-shadow: 0 -10px 20px 20px #FDEB84 inset,
                 0 -5px 15px 10px #FDEB84 inset, 0 -2px 5px #FDEB84 inset,
                 0 -3px 2px #FDEB84 inset, 0 2px 0px #FDEB84, 0 2px 3px #FDEB84,
                 0 5px 5px #FDEB84, 0 10px 15px #FDEB84, 0 10px 20px 20px #FDEB84;
                 filter: blur(5px);
-                animation: 2s rotate linear infinite;
+                // animation: 2s rotate linear infinite;
                 transform: rotate(-130deg);
             }     
             span{
                 position: relative;
                 z-index: 2;
             }       
+            &:hover{
+                &::after{
+                    animation: 2s rotate linear infinite;
+                }
+            }
         }
         .progress-bar {
             overflow: hidden;
@@ -484,11 +493,19 @@ section.bajada{
 }
 
 section.serviciosHome{
-    display: flex;
     padding: 50px 0;
     padding-top: 5px;
-    align-items: center;
-    overflow: hidden;
+    a.buttonFlecha{
+        margin-bottom: 20px;
+    }
+    .container{
+        margin-bottom: 50px;
+    }
+    .content{
+        display: flex;        
+        align-items: center;
+        overflow: hidden;
+    }
     .contentimgWrapper{
         width: 939px;
         overflow: hidden;
@@ -1105,7 +1122,9 @@ section.popUp{
     top: 0;
     left: 0;
     padding: 70px 0;
-    display: none;
+    // display: none;
+    transform: translateX(-100%);
+    transition: 0.5s linear;
     .container{
         position: relative;
         height: 100%;
@@ -1119,6 +1138,30 @@ section.popUp{
         top: 0;
         z-index: 5;
         cursor: pointer;
+        .close-x{
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 3px solid var(--color-anaranjado);
+            position: relative;
+            span{
+                font-family: var(--fuente-Work);
+                font-weight: 400;
+                font-size: 40px;
+                color: var(--color-anaranjado);
+                position: absolute;
+                top: 43%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 0.3s;
+                user-select: none;
+            }
+            &:hover{
+                span{
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+            }
+        }
     }
     .contenidoPopUp{
         display: flex;
@@ -1231,7 +1274,8 @@ section.popUp{
 }
 
 section.popUp.mostrar{
-    display: block;
+    // display: block;
+    transform: translateX(0%);
 }
 
 section.ContentEvent{
@@ -1357,6 +1401,10 @@ section.contacForm{
     form{
         margin-top: 50px;
     }
+}
+
+.slider3item .swiper-pagination-bullet{
+    border-radius: 15px;
 }
 
 form{
@@ -1579,6 +1627,30 @@ section.thanks{
             right: 0;
             z-index: 5;
             cursor: pointer;
+            .close-x{
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                border: 3px solid var(--color-anaranjado);
+                position: relative;
+                span{
+                    font-family: var(--fuente-Work);
+                    font-weight: 400;
+                    font-size: 40px;
+                    color: var(--color-anaranjado);
+                    position: absolute;
+                    top: 43%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: 0.3s;
+                    user-select: none;
+                }
+                &:hover{
+                    span{
+                        transform: translate(-50%, -50%) scale(1.2);
+                    }
+                }
+            }
         }
         .content{
             display: flex;
@@ -1870,7 +1942,8 @@ section.thanks{
 
 
 @media (max-width: 1024px) {
-    .ht-cursor{
+    .ht-cursor,
+    .ht-cursor2{
         display: none !important;
     }
 
@@ -2089,6 +2162,16 @@ section.thanks{
         width: 70px;
     }
 
+    section.popUp .top .close-x,
+    section.thanks .container .top .close-x{
+        width: 60px;
+        height: 60px;
+    }
+    section.popUp .top .close-x span,
+    section.thanks .container .top .close-x span{
+        font-size: 35px;
+    }
+
     
 
     /* end 1024 */
@@ -2207,8 +2290,15 @@ section.thanks{
 
 @media (max-width: 900px) {
     section.serviciosHome {
-        flex-direction: column;
         margin: 0 4.5vw;
+        .container{
+            margin: 0;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+        .content{
+            flex-direction: column;
+        }
     }
     section.serviciosHome .contentimgWrapper,
     section.serviciosHome .containerText,
@@ -2252,6 +2342,7 @@ section.thanks{
     }
     section.serviciosHome a.buttonFlecha {
         margin: 0 auto;
+        margin-bottom: 20px;
     }
     section.serviciosHome .containerText .textoInfo{
         max-width: 100%;
@@ -2401,6 +2492,7 @@ section.thanks{
     }
     section.serviciosHome a.buttonFlecha{
         margin: 0 auto;
+        margin-bottom: 20px;
     }
     section.servicios .contentServicios .itemServicios{
         flex-direction: column-reverse;
@@ -2496,6 +2588,16 @@ section.thanks{
     section.thanks .container .top img,
     section.menuMovil .top .close img{
         width: 65px;
+    }
+    section.popUp .top .close-x,
+    section.thanks .container .top .close-x{
+        width: 55px;
+        height: 55px;
+    }
+    section.popUp .top .close-x span,
+    section.thanks .container .top .close-x span{
+        font-size: 35px;
+        left: 48%;
     }
     section.popUp .top,
     section.thanks .container .top,
