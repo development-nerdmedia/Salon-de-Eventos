@@ -20,6 +20,9 @@ body {
   max-width: 1297px;
   margin: 0 auto; }
 
+body.hide-scrolling {
+  overflow: hidden; }
+
 /* Underline From Center */
 .hvr-underline-from-center {
   display: inline-block;

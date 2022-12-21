@@ -25,7 +25,9 @@ body{
     margin: 0 auto;
 }
  
-
+body.hide-scrolling {
+    overflow: hidden;
+}
 
 /* Underline From Center */
 .hvr-underline-from-center {

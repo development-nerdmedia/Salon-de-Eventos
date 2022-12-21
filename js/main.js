@@ -405,6 +405,7 @@ document.addEventListener("click", (e) => {
         textoEventoPop.innerHTML = titlePage;
         document.body.classList.add("hide-scrolling");
         document.querySelector(".popUp").classList.add("mostrar");
+        document.body.classList.add("hide-scrolling");
 
         setTimeout(() => {
             var indicadorVariable = document.querySelector("section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction .swiper-pagination-current").textContent;
