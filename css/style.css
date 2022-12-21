@@ -1084,7 +1084,17 @@ form .form-colum {
 form .form-group {
   width: 100%;
   position: relative;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
+  form .form-group::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 15px; }
   form .form-group div {
     position: relative; }
     form .form-group div::after {
@@ -1123,7 +1133,6 @@ form .form-group {
     appearance: none;
     color: #fff;
     background-color: transparent;
-    border-bottom: 2px solid #FFFFFF;
     transition: 0.2s linear; }
   form .form-group select option {
     background-color: var(--color-oscuro); }
@@ -1157,11 +1166,8 @@ form .form-group.formmensaje.focusin label,
 form .form-group.formmensaje.ok label {
   top: -15px; }
 
-form .form-group.error input {
-  border-bottom: 2px solid var(--color-anaranjado); }
-
-form .form-group.error textarea {
-  border-bottom: 2px solid var(--color-anaranjado); }
+form .form-group.error::before {
+  background-color: var(--color-anaranjado); }
 
 form select.error {
   border-bottom: 2px solid var(--color-anaranjado); }
