@@ -1530,6 +1530,25 @@ section.thanks {
       display: flex;
       justify-content: space-between;
       align-items: center; }
+      section.menuMovil .top .close-x {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        border: 3px solid var(--color-oscuro);
+        position: relative; }
+        section.menuMovil .top .close-x span {
+          font-family: var(--fuente-Work);
+          font-weight: 500;
+          font-size: 40px;
+          color: var(--color-oscuro);
+          position: absolute;
+          top: 43%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 0.3s;
+          user-select: none; }
+        section.menuMovil .top .close-x:hover span {
+          transform: translate(-50%, -50%) scale(1.2); }
     section.menuMovil ul {
       margin: 50px 0;
       margin-bottom: 30px; }
@@ -1668,11 +1687,13 @@ section.thanks {
   section.menuMovil .top .close img {
     width: 70px; }
   section.popUp .top .close-x,
-  section.thanks .container .top .close-x {
+  section.thanks .container .top .close-x,
+  section.menuMovil .top .close-x {
     width: 60px;
     height: 60px; }
   section.popUp .top .close-x span,
-  section.thanks .container .top .close-x span {
+  section.thanks .container .top .close-x span,
+  section.menuMovil .top .close-x span {
     font-size: 35px; }
   /* end 1024 */ }
 
@@ -1983,11 +2004,13 @@ section.thanks {
   section.menuMovil .top .close img {
     width: 65px; }
   section.popUp .top .close-x,
-  section.thanks .container .top .close-x {
+  section.thanks .container .top .close-x,
+  section.menuMovil .top .close-x {
     width: 55px;
     height: 55px; }
   section.popUp .top .close-x span,
-  section.thanks .container .top .close-x span {
+  section.thanks .container .top .close-x span,
+  section.menuMovil .top .close-x span {
     font-size: 35px;
     left: 48%; }
   section.popUp .top,
