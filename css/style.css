@@ -1755,12 +1755,14 @@ section.thanks {
     width: 100%;
     background-color: var(--color-anaranjado);
     font-family: var(--fuente-Work);
+    color: var(--color-oscuro) !important;
     font-weight: 600;
     font-size: 20px;
     border-radius: 40px;
     padding: 24px;
     outline: none !important;
-    appearance: none; }
+    appearance: none;
+    border: none; }
   section.ContentEvent .contentCategorias form::before {
     content: '';
     position: absolute;
