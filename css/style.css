@@ -714,7 +714,7 @@ footer {
         margin: 0 5px; }
 
 section.banner {
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1015,7 +1015,7 @@ section.ContentEvent {
   section.ContentEvent .contentCategorias ul li {
     list-style: none;
     display: inline-block;
-    padding: 15px;
+    padding: 10px 15px;
     border: 2px solid #FFF;
     border-radius: 40px;
     color: #FFF;
@@ -1048,8 +1048,12 @@ section.ContentEvent {
     transition: all 0.475s;
     z-index: -1; }
   section.ContentEvent .contentCategorias ul li:hover {
+    color: var(--color-oscuro);
     border: 2px solid var(--color-anaranjado);
-    color: var(--color-oscuro); }
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-name: backcolor;
+    animation-iteration-count: infinite; }
     section.ContentEvent .contentCategorias ul li:hover::before {
       transform: scaleX(1); }
   section.ContentEvent .contentEventos {
@@ -1101,6 +1105,12 @@ section.ContentEvent {
         transform: translateY(0); }
       section.ContentEvent .contentEventos .itemEvento .infoPop {
         display: none; }
+
+@keyframes backcolor {
+  0% {
+    background-color: var(--color-oscuro); }
+  100% {
+    background-color: var(--color-anaranjado); } }
 
 section.contacForm {
   padding: 100px 0; }

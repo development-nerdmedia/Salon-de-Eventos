@@ -15,14 +15,26 @@ document.body.addEventListener("mousemove", e => {
         y: e.clientY,
     })
 })
+document.body.addEventListener("mousemove", e => {
+    gsap.to(".ht-cursor2", {
+        x: e.clientX,
+        y: e.clientY,
+    })
+})
 
-$(".slider3item .swiper-slide").hover(function () {
+$("section.galery .slider3item .swiper-slide").hover(function () {
+    $(".ht-cursor2").addClass("mostrar");
+}, function () {
+    $(".ht-cursor2").removeClass("mostrar");
+});
+
+$("section.ContentEvent .contentEventos .itemEvento").hover(function () {
     $(".ht-cursor").addClass("mostrar");
 }, function () {
     $(".ht-cursor").removeClass("mostrar");
 });
 
-$("section.ContentEvent .contentEventos .itemEvento").hover(function () {
+$("section.ultimosEventos .slider3item .swiper-slide").hover(function () {
     $(".ht-cursor").addClass("mostrar");
 }, function () {
     $(".ht-cursor").removeClass("mostrar");
