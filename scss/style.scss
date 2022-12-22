@@ -1986,7 +1986,7 @@ section.thanks{
             flex-direction: column;
             justify-content: space-between;
             .redesIcon{
-                margin-bottom: 45px;
+                margin-bottom: 60px;
             }
         }
         .top{
@@ -2876,6 +2876,9 @@ section.thanks{
 
     footer .datos .info ul li a::before{
         content: none;
+    }
+    section.menuMovil .container .redesIcon {
+        margin-bottom: 45px;
     }
 
     /* end 500px */
