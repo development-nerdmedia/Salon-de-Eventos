@@ -71,7 +71,7 @@ MyApp = {
                                 var textContent = parrafos[i].innerHTML;
                                 document.querySelector(".serviciosHome .textoInfo p").innerHTML = textContent;
                             }
-                        }, 100);
+                        }, 200);
                     }
 
                     for (let y = 0; y < imgs.length; y++) {
@@ -490,7 +490,7 @@ document.addEventListener("click", (e) => {
         indicadorVariablePop2.innerHTML = indicadorVariable2;
     }
 
-    if (e.target.closest("header nav .navigation ul li.menu-mobile img") || e.target.closest(".menuMovil .top .close img")) {
+    if (e.target.closest("header nav .navigation ul li.menu-mobile img") || e.target.closest(".menuMovil .top .close")) {
         document.querySelector("section.menuMovil").classList.toggle("open");
     }
 })

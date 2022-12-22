@@ -422,7 +422,7 @@ section.serviciosHome {
         right: 0;
         transform: translate(0, -50%);
         opacity: 0;
-        transition: 0.2s linear; }
+        transition: 0.5s linear; }
       section.serviciosHome .contentimgWrapper .Contentimg img.select {
         opacity: 1;
         height: 100%; }
@@ -722,6 +722,8 @@ section.banner {
   top: 0;
   left: 0;
   width: 100%; }
+  section.banner .title {
+    z-index: 1; }
   section.banner::before {
     content: '';
     position: absolute;
@@ -952,7 +954,7 @@ section.popUp {
       section.popUp .contenidoPopUp .info span {
         font-family: var(--fuente-Work);
         font-weight: 400;
-        font-size: 40px;
+        font-size: 30px;
         color: #fff; }
       section.popUp .contenidoPopUp .info .newPaginacion {
         font-family: var(--fuente-Work);
@@ -1050,10 +1052,9 @@ section.ContentEvent {
   section.ContentEvent .contentCategorias ul li:hover {
     color: var(--color-oscuro);
     border: 2px solid var(--color-anaranjado);
-    animation-timing-function: linear;
-    animation-duration: 1s;
+    animation-delay: 0.4s;
     animation-name: backcolor;
-    animation-iteration-count: infinite; }
+    animation-fill-mode: forwards; }
     section.ContentEvent .contentCategorias ul li:hover::before {
       transform: scaleX(1); }
   section.ContentEvent .contentEventos {
@@ -1108,7 +1109,7 @@ section.ContentEvent {
 
 @keyframes backcolor {
   0% {
-    background-color: var(--color-oscuro); }
+    background-color: transparent; }
   100% {
     background-color: var(--color-anaranjado); } }
 
@@ -1433,6 +1434,8 @@ section.thanks {
     left: 59.8vw; } }
 
 @media (max-width: 1280px) {
+  section.bajada .dos {
+    top: -200px; }
   .container {
     max-width: 1013px; }
   header nav .logo a img {
@@ -1479,6 +1482,8 @@ section.thanks {
   section.popUp .contenidoPopUp .info .newPaginacion,
   section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction {
     font-size: 35px; }
+  section.popUp .contenidoPopUp .info span.category {
+    font-size: 30px; }
   section.popUp .contenidoPopUp .sliderPopUp .swiperPop .swiper-pagination-fraction {
     left: 680px; }
   section.ContentEvent .contentEventos {
@@ -1496,7 +1501,10 @@ section.thanks {
   section.serviciosHome .containerText {
     padding-left: 50px;
     width: calc(100% - 650px);
-    padding-right: 5vw; } }
+    padding-right: 5vw; }
+  .ht-cursor,
+  .ht-cursor2 {
+    display: none !important; } }
 
 @media (max-width: 1130px) {
   section.serviciosHome .contentimgWrapper {
@@ -1517,9 +1525,6 @@ section.thanks {
     padding-left: 37px; } }
 
 @media (max-width: 1024px) {
-  .ht-cursor,
-  .ht-cursor2 {
-    display: none !important; }
   section.menuMovil {
     display: block;
     display: block;
@@ -1662,7 +1667,7 @@ section.thanks {
     background: linear-gradient(180deg, rgba(24, 19, 18, 0) 38.75%, rgba(24, 19, 18, 0.74) 71.94%);
     opacity: 1; }
   section.banner {
-    height: 350px; }
+    height: 250px; }
   section.banner h2 {
     font-size: 50px; }
   body.servicios section.bajadaSalon {
@@ -1705,6 +1710,10 @@ section.thanks {
   section.thanks .container .top .close-x span,
   section.menuMovil .top .close-x span {
     font-size: 35px; }
+  .slider3item .swiper-slide .info span {
+    font-size: 18px; }
+  .slider3item .swiper-slide .info p {
+    font-size: 22px; }
   /* end 1024 */ }
 
 @media (max-width: 1023px) {
@@ -1866,24 +1875,26 @@ section.thanks {
     font-weight: 600;
     font-size: 20px;
     border-radius: 40px;
-    padding: 24px;
+    padding: 15px 24px;
     outline: none !important;
     appearance: none;
     border: none; }
   section.ContentEvent .contentCategorias form::before {
     content: '';
     position: absolute;
-    right: 25px;
+    right: 21px;
     top: 50%;
     transform: translateY(-50%);
     background-image: url(../img/flecha-select2.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 25px;
-    height: 21px; }
+    height: 25px; }
   section.ContentEvent .contentEventos {
     margin: 0 0px;
-    margin-top: 50px; } }
+    margin-top: 50px; }
+  section.servicios .contentServicios .itemServicios {
+    margin-bottom: 140px; } }
 
 @media (max-width: 768px) {
   header nav .logo a img,
@@ -2000,6 +2011,8 @@ section.thanks {
   section.popUp .contenidoPopUp .info .newPaginacion,
   section.popUp .contenidoPopUp .info span {
     font-size: 35px; }
+  section.popUp .contenidoPopUp .info span.category {
+    font-size: 30px; }
   section.popUp .contenidoPopUp .info .newPaginacion {
     margin-bottom: 20px; }
   section.popUp .contenidoPopUp .info .flechas {
@@ -2033,7 +2046,7 @@ section.thanks {
     display: block;
     margin-bottom: 50px;
     position: relative;
-    padding: 30px 0; }
+    padding: 25px 0; }
     section.serviciosInterna .containerDetalles form::before {
       content: '';
       position: absolute;
@@ -2136,14 +2149,37 @@ section.thanks {
     width: 130px; }
   header::before {
     height: 119px; }
+  section.servicios .contentServicios .itemServicios {
+    margin-bottom: 100px; }
+  section.banner h2 {
+    transform: translateY(23px);
+    font-size: 35px; }
+  section.popUp .top, section.thanks .container .top, section.menuMovil .top {
+    right: 0px; }
+  section.ubicacion p {
+    text-align: center; }
+  section.popUp .top .close-x, section.thanks .container .top .close-x, section.menuMovil .top .close-x {
+    width: 50px;
+    height: 50px; }
+  section.popUp .top .close-x span, section.thanks .container .top .close-x span, section.menuMovil .top .close-x span {
+    left: 50%; }
+  a.buttonFlecha, button.buttonFlecha,
+  section.call a {
+    font-size: 18px; }
+  section.servicios .contentServicios .itemServicios .textoInfo h3 {
+    font-size: 22px; }
+  section.call a {
+    padding-right: 58px; }
+  section.call a img {
+    width: 25px; }
+  section.call h2 {
+    font-size: 27px; }
+  a.buttonFlecha .img {
+    margin-left: 14px; }
+    a.buttonFlecha .img img {
+      width: 40px; }
   /* end 500px */ }
 
 @media (max-width: 425px) {
   section.menuMovil ul li, section.menuMovil ul li a {
-    font-size: 30px; }
-  section.serviciosHome a.buttonFlecha {
-    display: block; }
-    section.serviciosHome a.buttonFlecha .img {
-      width: fit-content;
-      margin: 0 auto;
-      margin-top: 20px; } }
+    font-size: 30px; } }
