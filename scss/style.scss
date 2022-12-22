@@ -2885,14 +2885,12 @@ section.thanks{
     section.menuMovil ul li, section.menuMovil ul li a {
         font-size: 30px;
     }
-    // section.serviciosHome a.buttonFlecha{
-    //     display: block;
-    //     .img{
-    //         width: fit-content;
-    //         margin: 0 auto;
-    //         margin-top: 20px;
-    //     }
-    // }
+}
+
+@media (max-width: 380px){
+    section.menuMovil .container .redesIcon {
+        margin-bottom: 40px;
+    }
 }
 
 

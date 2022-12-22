@@ -2189,3 +2189,7 @@ section.thanks {
 @media (max-width: 425px) {
   section.menuMovil ul li, section.menuMovil ul li a {
     font-size: 30px; } }
+
+@media (max-width: 380px) {
+  section.menuMovil .container .redesIcon {
+    margin-bottom: 40px; } }
