@@ -1985,6 +1985,9 @@ section.thanks{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            .redesIcon{
+                margin-bottom: 35px;
+            }
         }
         .top{
             display: flex;
@@ -2866,6 +2869,13 @@ section.thanks{
         img{
             width: 40px;
         }
+    }
+    .slider3item .swiper-pagination-bullet {
+        width: 38px;
+    }
+
+    footer .datos .info ul li a::before{
+        content: none;
     }
 
     /* end 500px */

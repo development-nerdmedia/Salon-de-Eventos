@@ -1541,6 +1541,8 @@ section.thanks {
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
+      section.menuMovil .container .redesIcon {
+        margin-bottom: 35px; }
     section.menuMovil .top {
       display: flex;
       justify-content: space-between;
@@ -2178,6 +2180,10 @@ section.thanks {
     margin-left: 14px; }
     a.buttonFlecha .img img {
       width: 40px; }
+  .slider3item .swiper-pagination-bullet {
+    width: 38px; }
+  footer .datos .info ul li a::before {
+    content: none; }
   /* end 500px */ }
 
 @media (max-width: 425px) {
