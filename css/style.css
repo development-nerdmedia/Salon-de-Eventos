@@ -2209,9 +2209,11 @@ section.thanks {
     width: 25px; }
   section.call h2 {
     font-size: 27px; }
-  a.buttonFlecha .img {
+  a.buttonFlecha .img,
+  button.buttonFlecha .img {
     margin-left: 14px; }
-    a.buttonFlecha .img img {
+    a.buttonFlecha .img img,
+    button.buttonFlecha .img img {
       width: 40px; }
   .slider3item .swiper-pagination-bullet {
     width: 38px; }
@@ -2221,6 +2223,11 @@ section.thanks {
     margin-bottom: 45px; }
   section.serviciosInterna .containerDetalles form select {
     padding-right: 9%; }
+  a.buttonFlecha .img::before,
+  button.buttonFlecha .img::before {
+    width: 35px;
+    height: 35px;
+    right: -13px; }
   /* end 500px */ }
 
 @media (max-width: 425px) {

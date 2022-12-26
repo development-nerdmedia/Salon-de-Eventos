@@ -2923,7 +2923,8 @@ section.thanks{
     section.call h2{
         font-size: 27px;
     }
-    a.buttonFlecha .img{
+    a.buttonFlecha .img,
+    button.buttonFlecha .img{
         margin-left: 14px;
         img{
             width: 40px;
@@ -2942,6 +2943,13 @@ section.thanks{
 
     section.serviciosInterna .containerDetalles form select{
         padding-right: 9%;
+    }
+
+    a.buttonFlecha .img::before,
+    button.buttonFlecha .img::before{
+        width: 35px;
+        height: 35px;
+        right: -13px;
     }
 
     /* end 500px */
