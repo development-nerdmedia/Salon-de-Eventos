@@ -2111,7 +2111,8 @@ section.thanks {
     font-size: 20px;
     color: var(--color-oscuro);
     width: 100%;
-    padding-right: 6%; }
+    padding-right: 6%;
+    white-space: break-spaces; }
   section.serviciosInterna .containerDetalles {
     flex-direction: column; }
   section.serviciosInterna .containerDetalles .info {
